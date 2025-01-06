@@ -11,8 +11,8 @@ body, html {
 
 .universe {
     position: relative;
-    width: 1000vmin;
-    height: 1000vmin;
+    width: 100vmin;
+    height: 100vmin;
     perspective: 50000px;
     transform-style: preserve-3d;
 }
@@ -30,10 +30,24 @@ body, html {
     transform: translate(-50%, -50%) rotateX(60deg);
 }
 
+.orbit::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
+    transform: translate(-50%, -50%) rotateX(90deg);
+    opacity: 0.65;
+}
+
 .sun {
     width: 10vmin;
     height: 10vmin;
     background: yellow;
+    background-image: url('https://images-assets.nasa.gov/image/PIA17669/PIA17669~small.jpg');
     box-shadow: 0 0 50px yellow;
     animation: none;
     transform: translate(-50%, -50%);
@@ -61,19 +75,24 @@ body, html {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 2vmin;
-    height: 2vmin;
+    width: 4vmin;
+    height: 4vmin;
     border-radius: 50%;
-    background: white;
+    background: purple;
     transform: translateX(-50%);
+    background-size: cover;
+    background-position: center;
 }
 
-.mercury::after { background: gray; }
-.venus::after { background: orange; }
-.earth::after { background: blue; }
-.mars::after { background: red; }
-.jupiter::after { background: brown; }
-.saturn::after { background: goldenrod; }
+.mercury::after { background-image: url('https://images-assets.nasa.gov/image/PIA15164/PIA15164~medium.jpg'); }
+.venus::after { background-image: url('https://images-assets.nasa.gov/image/PIA00270/PIA00270~medium.jpg'); }
+.earth::after { background-image: url('https://images-assets.nasa.gov/image/PIA00114/PIA00114~small.jpg'); }
+.mars::after { background-image: url('https://images-assets.nasa.gov/image/PIA03229/PIA03229~small.jpg'); }
+.jupiter::after { background-image: url('https://images-assets.nasa.gov/image/PIA22946/PIA22946~medium.jpg'); }
+.saturn::after { background-image: url('https://images-assets.nasa.gov/image/PIA02225/PIA02225~small.jpg'); }
+/* Saturn Image
+    https://images-assets.nasa.gov/image/PIA05380/PIA05380~small.jpg
+*/
 
 .orbit {
     animation: orbit var(--duration) linear infinite;
