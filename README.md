@@ -5,7 +5,6 @@ Simple HTML+CSS project replicating the Solar System Orbit dynamically
 **
 
 ## Preview
+![Solar System Orbit Preview](public/img/project-preview.png)
 
 **
-<iframe 
-	src="https://jsfiddle.net/tj2o0qvL/" style="width:100%; height:800px;" ></iframe>
